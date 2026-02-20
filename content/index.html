@@ -8,7 +8,31 @@ layout: landing_page
 ---
 
 <!-- Lead stage -->
+<div style="background: linear-gradient(135deg, #0066cc, #00aaff); color: white; text-align: center; padding: 15px; font-size: 16px;">
+  🎉 preCICE is participating in <strong>Google Summer of Code 2026</strong> for the first time! &nbsp;|&nbsp;
+          <span id="gsoc-countdown" style="font-weight: bold;"></span>
+          &nbsp;<a href="https://summerofcode.withgoogle.com/">Apply now →</a>
 
+<script>
+  function updateCountdown() {
+    var deadline = new Date("April 8, 2026 18:00:00 UTC");
+    var now = new Date();
+    var diff = deadline - now;
+    if (diff <= 0) {
+      document.getElementById("gsoc-countdown").innerHTML = "Applications closed!";
+      return;
+    }
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById("gsoc-countdown").innerHTML = 
+      "⏰ " + days + "d " + hours + "h " + minutes + "m " + seconds + "s remaining";
+    setTimeout(updateCountdown, 1000);
+  }
+  updateCountdown();
+</script>
+</div>
 <div class="container">
   <div class="section">
 
